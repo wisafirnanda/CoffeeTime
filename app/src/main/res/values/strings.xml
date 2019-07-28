@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Coffee Time</string>
+
+    //BottomNav
+    <string name="home">Home</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="menu">Menu</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="profil">Profil</string>
+
+    <string name="google_maps_key">AIzaSyADqqeKcwI3cXhRznauSIPVYcKQidxa504</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Spinner jenis kopi
+    <string-array name="jenis_kopi">
+        <item>Biji Kopi</item>
+        <item>Bubuk Kopi</item>
+        <item>Kopi Jadi</item>
+    </string-array>
+</resources>
