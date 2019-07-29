@@ -3,7 +3,9 @@ package com.coffeetime.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Kopi {
+import java.io.Serializable;
+
+public class Kopi implements Serializable {
 
     @SerializedName("id_kopi")
     @Expose

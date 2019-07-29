@@ -60,8 +60,6 @@ public class MenuFragment extends Fragment {
         tambah_menu = view.findViewById(R.id.tambah_menu);
         recyclerView = view.findViewById(R.id.recyclerview);
 
-        //addData();
-
         adapter = new MenuWarkopAdapter(kopiArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -77,16 +75,6 @@ public class MenuFragment extends Fragment {
         return view;
 
     }
-
-//    void addData(){
-//        kopiArrayList = new ArrayList<>();
-//        kopiArrayList.add(new Kopi("Sanger", "Kopi jadi", "Rp. 5.000"));
-//        kopiArrayList.add(new Kopi("Arabica Gayo", "Bubuk kopi", "Rp. 30.000"));
-//        kopiArrayList.add(new Kopi("Espresso", "Kopi jadi", "Rp. 10.000"));
-//        kopiArrayList.add(new Kopi("Sanger", "Kopi jadi", "Rp. 5.000"));
-//        kopiArrayList.add(new Kopi("Arabica Gayo", "Bubuk kopi", "Rp. 30.000"));
-//        kopiArrayList.add(new Kopi("Espresso", "Kopi jadi", "Rp. 10.000"));
-//    }
 
     private void DialogForm() {
         dialog = new AlertDialog.Builder(getActivity());

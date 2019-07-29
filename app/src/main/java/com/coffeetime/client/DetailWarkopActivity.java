@@ -11,17 +11,27 @@ import android.widget.TextView;
 import com.coffeetime.R;
 import com.coffeetime.adapter.MenuClientAdapter;
 import com.coffeetime.model.Kopi;
+import com.coffeetime.networkmanager.Connection;
+import com.coffeetime.networkmanager.Endpoints;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailWarkopActivity extends Activity {
 
     private Bundle bundle;
-    TextView namawarkop, namapemilik, cpwarkop, alamatwarkop, waktubuka, menu;
-
+    TextView namawarkop, namapemilik, cpwarkop, alamatwarkop, waktubuka, txquantity, harga_kopi, harga_total, namakopi, jeniskopi;
     private RecyclerView recyclerView;
     private MenuClientAdapter adapter;
-    private ArrayList<Kopi> kopiArrayList;
+    private List<Kopi> kopiArrayList;
+    int quantity = 0;
+
+    Endpoints endpoints;
+    Kopi kopi;
 
 
     @Override
@@ -29,63 +39,86 @@ public class DetailWarkopActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_warkop);
 
+        //warkop
         namawarkop = findViewById(R.id.nama_warkop);
         namapemilik = findViewById(R.id.nama_pemilik);
         cpwarkop = findViewById(R.id.cp_warkop);
         alamatwarkop = findViewById(R.id.alamat_warkop);
         waktubuka = findViewById(R.id.waktu_buka);
-        //menu = findViewById(R.id.menu);
+
+        //kopi
+        namakopi = findViewById(R.id.txnama_kopi);
+        jeniskopi = findViewById(R.id.txjenis_kopi);
+
+        txquantity = findViewById(R.id.tx_quantity);
+        harga_kopi = findViewById(R.id.txharga_kopi);
+        harga_total = findViewById(R.id.txharga_total);
 
         recyclerView = findViewById(R.id.recyclerview);
 
-        //addData();
+        tampildata();
 
-        adapter = new MenuClientAdapter(kopiArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DetailWarkopActivity.this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
 
         bundle = getIntent().getExtras();
-        //reference = FirebaseDatabase.getInstance().getReference().child("warkop");
-
-        /*if(bundle!=null)
-        {
-            String key = bundle.getString("warkop_key");
-
-            reference.orderByKey().equalTo(key).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot)
-                {
-                    for (DataSnapshot data : dataSnapshot.getChildren())
-                    {
-                        namawarkop.setText(data.child("nama_warkop").getValue().toString());
-                        //namapemilik.setText(data.child("nama_pemilik").getValue().toString());
-                        //cpwarkop.setText(data.child("cp_warkop").getValue().toString());
-                        alamatwarkop.setText(data.child("alamat_warkop").getValue().toString());
-                        waktubuka.setText(data.child("waktu_buka").getValue().toString());
-                        //menu.setText(data.child("menu").getValue().toString());
-                    }
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-        }*/
     }
 
-//    void addData(){
-//        kopiArrayList = new ArrayList<>();
-//        kopiArrayList.add(new Kopi("Sanger", "Kopi jadi", "Rp. 5.000"));
-//        kopiArrayList.add(new Kopi("Arabica Gayo", "Bubuk kopi", "Rp. 30.000"));
-//        kopiArrayList.add(new Kopi("Espresso", "Kopi jadi", "Rp. 10.000"));
-//        kopiArrayList.add(new Kopi("Sanger", "Kopi jadi", "Rp. 5.000"));
-//        kopiArrayList.add(new Kopi("Arabica Gayo", "Bubuk kopi", "Rp. 30.000"));
-//        kopiArrayList.add(new Kopi("Espresso", "Kopi jadi", "Rp. 10.000"));
-//    }
+    void tampildata(){
+
+        endpoints = Connection.getEndpoints(DetailWarkopActivity.this);
+        endpoints.getKopi().enqueue(new Callback<List<Kopi>>() {
+            @Override
+            public void onResponse(Call<List<Kopi>> call, Response<List<Kopi>> response) {
+                kopiArrayList = new ArrayList<>(response.body());
+                adapter = new MenuClientAdapter(kopiArrayList);
+                recyclerView.setAdapter(adapter);
+
+                adapter.setOnQuantityChangedListener(new MenuClientAdapter.OnQuantityChangedListener() {
+                    int totalakhir = 0;
+
+                    @Override
+                    public void onQuantityChanged(int total) {
+                        totalakhir += total;
+                        harga_total.setText(String.valueOf(totalakhir));
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(Call<List<Kopi>> call, Throwable t) {
+
+            }
+        });
+    }
 
     public void Pesan(View view) {
         startActivity (new Intent(DetailWarkopActivity.this, PesanActivity.class));
     }
+
+    /*public void tambah(View view) {
+        int harga = Integer.parseInt(harga_kopi.getText().toString());
+        int quantity = Integer.parseInt(txquantity.getText().toString());
+        int total = harga*quantity;
+        harga_total.setText(total+"");
+
+        if (quantity==100){
+            return;
+        }
+        quantity = quantity+1;
+        txquantity.setText(""+quantity);
+    }
+
+    public void kurang(View view) {
+        int harga = Integer.parseInt(harga_kopi.getText().toString());
+        int quantity = Integer.parseInt(txquantity.getText().toString());
+        int total = harga-quantity;
+        harga_total.setText(total+"");
+
+        if (quantity==1){
+            return;
+        }
+        quantity = quantity - 1;
+        txquantity.setText(quantity);
+    }*/
 }

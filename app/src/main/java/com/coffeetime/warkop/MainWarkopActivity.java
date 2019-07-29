@@ -29,7 +29,6 @@ public class MainWarkopActivity extends AppCompatActivity
 
     Warkop warkop;
     Endpoints endpoints;
-    Button btnLogout;
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -38,7 +37,6 @@ public class MainWarkopActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_warkop);
-        btnLogout = findViewById(R.id.btn_logout);
 
         // kita set default nya Home Fragment
         loadFragment(new MenuFragment());
@@ -50,8 +48,6 @@ public class MainWarkopActivity extends AppCompatActivity
         sharedPreferences = getSharedPreferences("coffee", 0);
         editor = sharedPreferences.edit();
         editor.apply();
-
-
 
     }
 
@@ -86,9 +82,4 @@ public class MainWarkopActivity extends AppCompatActivity
     public void ProfilWarkop(View view) {
         startActivity(new Intent(MainWarkopActivity.this, TambahWarkopActivity.class));
     }
-
-
-//    public void logout(View view) {
-//
-//    }
 }

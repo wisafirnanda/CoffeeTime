@@ -35,7 +35,6 @@ import retrofit2.Response;
 
 public class TambahWarkopActivity extends Activity {
     LayoutInflater inflater;
-    Button btndaftarwarkop;
     EditText nama_warkopText, nama_pemilikText, cp_warkopText, waktu_bukaText;
     TextView alamat_warkopText;
     String stxtaddresplace;
@@ -57,8 +56,6 @@ public class TambahWarkopActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_warkop);
-
-        btndaftarwarkop = findViewById(R.id.btndaftarwarkop);
 
         nama_warkopText = findViewById(R.id.nama_warkop);
         nama_pemilikText = findViewById(R.id.nama_pemilik);

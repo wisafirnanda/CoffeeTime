@@ -66,20 +66,6 @@ public class ProfilClientFragment extends Fragment {
 
         //request connection
         endpoints = Connection.getEndpoints(getActivity());
-//        endpoints.getUser(user).enqueue(new Callback<User>() {
-//            @Override
-//            public void onResponse(Call<User> call, Response<User> response) {
-//                try {
-//                    JSONObject jsonObject = new JSONObject(response.body().toString());
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<User> call, Throwable t) {
-//
-//            }
-//        });
+
     }
 }

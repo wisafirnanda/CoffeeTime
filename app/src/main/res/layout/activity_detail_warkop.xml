@@ -104,7 +104,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
             android:orientation="vertical">
 
         </android.support.v7.widget.RecyclerView>
@@ -149,13 +149,12 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/harga_total"
+                    android:id="@+id/txharga_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="12dp"
-                    android:text="Rp. 20.000"
                     android:textColor="#FF6631"
                     android:textSize="18sp"
                     android:textStyle="bold" />
