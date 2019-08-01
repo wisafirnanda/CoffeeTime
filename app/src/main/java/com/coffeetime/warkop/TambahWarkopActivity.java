@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,12 +66,13 @@ public class TambahWarkopActivity extends Activity {
         editor = sharedPreferences.edit();
         editor.apply();
 
-        Gson gson = new Gson();
+        gson = new Gson();
         String json = sharedPreferences.getString("user","");
 
         user = gson.fromJson(json, new TypeToken<User>(){
 
         }.getType());
+
     }
 
     public void tambahWarkop(View view) {
@@ -99,8 +99,16 @@ public class TambahWarkopActivity extends Activity {
                     if (jsonObject.getString("status").equals("sukses")) {
                         String id_warkop = jsonObject.getString("id");
                         String id_user = user.getIdUser();
+                        user.setIdWarkop(id_warkop);
                         editor.putString("id_warkop",id_warkop);
+
+                        //Log.i("id_warkop",user.getIdWarkop());
+
+                        String json = gson.toJson(user);
+
                         editor.putString("id_user",id_user);
+
+                        editor.putString("user",json);
                         editor.commit();
                         startActivity(new Intent(TambahWarkopActivity.this, MainWarkopActivity.class));
 
@@ -137,8 +145,8 @@ public class TambahWarkopActivity extends Activity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("masuk onresult", "onresult");
-        Log.i("result   ", "request code "+requestCode+","+"result"+resultCode+"data"+data);
+        //Log.i("masuk onresult", "onresult");
+        //Log.i("result   ", "request code "+requestCode+","+"result"+resultCode+"data"+data);
         super.onActivityResult(requestCode,resultCode,data);
 
         // menangkap hasil balikan dari Place Picker, dan menampilkannya pada TextView

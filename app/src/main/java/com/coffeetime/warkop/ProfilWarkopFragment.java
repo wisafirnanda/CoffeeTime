@@ -77,8 +77,8 @@ public class ProfilWarkopFragment extends Fragment {
         warkop = new Warkop();
         namaakun.setText(user.getNama());
 
-        warkop.setIdWarkop(sharedPreferences.getString("id_warkop",""));
-        warkop.setIdUser(sharedPreferences.getString("id_user",""));
+        warkop.setIdWarkop(user.getIdWarkop());
+        warkop.setIdUser(user.getIdUser());
 
         //data profil warkop
         endpoints = Connection.getEndpoints(getActivity());

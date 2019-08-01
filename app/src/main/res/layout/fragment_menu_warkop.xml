@@ -17,12 +17,12 @@
         android:layout_centerHorizontal="true"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/recyclerviewmenuwarkop"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/infoinput">
+        android:layout_below="@+id/infoinput"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -30,7 +30,7 @@
         android:id="@+id/tambah_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recyclerview"
+        android:layout_below="@+id/recyclerviewmenuwarkop"
         android:layout_marginStart="310dp"
         android:layout_marginTop="19dp"
         android:background="@color/colorPrimaryDark"

@@ -39,8 +39,11 @@ public interface Endpoints {
     @POST("kopi.php?aksi=inputkopi")
     Call<ResponseBody> aadKopi(@Body Kopi kopi);
 
-    @GET("kopi.php?aksi=tampilkopi")
-    Call<List<Kopi>> getKopi();
+    @POST("kopi.php?aksi=tampilkopi")
+    Call<List<Kopi>> getKopi(@Body Kopi kopi);
+
+    @GET("kopi.php?aksi=tampilkopis")
+    Call<List<Kopi>> getKopis();
 
     //pemesanan
     @POST("pemesanan.php?aksi=inputpemesanan")

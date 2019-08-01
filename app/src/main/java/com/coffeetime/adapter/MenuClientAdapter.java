@@ -26,10 +26,10 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
     }
 
     @Override
-    public MenuClientAdapter.MenuClientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MenuClientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.row_list_menu_client, parent, false);
-        return new MenuClientAdapter.MenuClientViewHolder(view);
+        return new MenuClientViewHolder(view);
     }
 
     @Override
@@ -46,8 +46,6 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
 
     public interface OnQuantityChangedListener {
         void onQuantityChanged(int total);
-
-
     }
 
     public class MenuClientViewHolder extends RecyclerView.ViewHolder {
@@ -64,8 +62,6 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
             txquantity = itemView.findViewById(R.id.tx_quantity);
             decrement = itemView.findViewById(R.id.btn_decrement);
             increment = itemView.findViewById(R.id.btn_increment);
-
-
 
             increment.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -99,9 +95,6 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
                     txquantity.setText(String.valueOf(quantity));
                 }
             });
-
         }
-
-
     }
 }

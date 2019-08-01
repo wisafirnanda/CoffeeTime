@@ -66,11 +66,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/nama_warkop"
+                    android:id="@+id/txnamawarkop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -81,28 +81,29 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/alamat_warkop"
+                    android:id="@+id/txalamatwarkop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Jl. Lamteh, Ulee Kareng"
                     android:textColor="@color/primary_text_color"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/waktu_buka"
+                    android:id="@+id/txwaktubuka"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="08:00 - 24.00 WIB"
                     android:textColor="@color/primary_text_color"
-                    android:textSize="18sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview"
+            android:id="@+id/recyclerviewmenuclient"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:orientation="vertical">
@@ -143,7 +144,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="10dp"
                     android:text="Harga Total:"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
@@ -154,9 +156,11 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="12dp"
                     android:textColor="#FF6631"
                     android:textSize="18sp"
+                    android:text="10000"
                     android:textStyle="bold" />
 
             </RelativeLayout>

@@ -20,8 +20,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/warkopDetailLayout"
-                android:onClick="detailWarkop">
+                android:id="@+id/warkopDetailLayout">
 
                 <ImageView
                     android:id="@+id/image"
@@ -31,7 +30,7 @@
                     android:src="@drawable/warkop" />
 
                 <TextView
-                    android:id="@+id/nama_warkop"
+                    android:id="@+id/txnama_warkop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image"
@@ -49,10 +48,10 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="2dp"
                     android:background="#eee"
-                    android:layout_below="@+id/nama_warkop"/>
+                    android:layout_below="@+id/txnama_warkop"/>
 
                 <TextView
-                    android:id="@+id/alamat_warkop"
+                    android:id="@+id/txalamat_warkop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Jl. Syiah Kuala no 208"

@@ -32,7 +32,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/nama_kopi"
+                        android:id="@+id/txnamakopi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -43,10 +43,10 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/jenis_kopi"
+                        android:id="@+id/txjeniskopi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/nama_kopi"
+                        android:layout_below="@+id/txnamakopi"
                         android:layout_marginTop="10dp"
                         android:paddingStart="20dp"
                         android:textStyle="bold"
@@ -60,13 +60,12 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:id="@+id/harga_kopi"
+                            android:id="@+id/txhargakopi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
                             android:layout_marginEnd="12dp"
-                            android:text="Rp. 5000"
+                            android:text="5000"
                             android:textColor="#FF6631"
                             android:textSize="16sp"
                             android:textStyle="bold" />
