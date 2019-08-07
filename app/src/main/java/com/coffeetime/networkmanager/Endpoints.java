@@ -1,12 +1,11 @@
 package com.coffeetime.networkmanager;
 
-import java.util.List;
-
 import com.coffeetime.model.Kopi;
 import com.coffeetime.model.Pembayaran;
 import com.coffeetime.model.Pemesanan;
 import com.coffeetime.model.User;
 import com.coffeetime.model.Warkop;
+import java.util.List;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -32,6 +31,9 @@ public interface Endpoints {
     @POST("warkop.php?aksi=tampilwarkop")
     Call<Warkop> getWarkop(@Body Warkop warkop);
 
+    @POST("warkop.php?aksi=tampilwarkopid")
+    Call<Warkop> getWarkopId(@Body Warkop warkop);
+
     @GET("warkop.php?aksi=tampilwarkops")
     Call<List<Warkop>> getWarkops();
 
@@ -44,6 +46,15 @@ public interface Endpoints {
 
     @GET("kopi.php?aksi=tampilkopis")
     Call<List<Kopi>> getKopis();
+
+    @GET("kopi.php?aksi=tampilkopijadi")
+    Call<List<Kopi>> getKopiJadi();
+
+    @GET("kopi.php?aksi=tampilkopibubuk")
+    Call<List<Kopi>> getKopiBubuk();
+
+    @GET("kopi.php?aksi=tampilkopibiji")
+    Call<List<Kopi>> getKopiBiji();
 
     //pemesanan
     @POST("pemesanan.php?aksi=inputpemesanan")

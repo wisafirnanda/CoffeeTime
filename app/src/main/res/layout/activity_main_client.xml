@@ -20,8 +20,8 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="bottom"
         app:itemIconTint="@drawable/state_list_nav_client"
         app:itemTextColor="@drawable/state_list_nav_client"
         app:menu="@menu/client_nav" />

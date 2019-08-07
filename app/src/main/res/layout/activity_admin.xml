@@ -8,12 +8,13 @@
     android:padding="5dp">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerviewriwayat"
+        android:id="@+id/recyclerviewpemesanan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
     </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>

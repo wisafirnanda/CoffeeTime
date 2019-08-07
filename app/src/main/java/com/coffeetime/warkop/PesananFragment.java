@@ -42,6 +42,6 @@ public class PesananFragment extends Fragment {
     void addData(){
         pesananWarkopArrayList = new ArrayList<>();
         pesananWarkopArrayList.add(new PesananWarkop("Wisa", "Sanger", "Kopi jadi", "x 2", "10.000"));
-        pesananWarkopArrayList.add(new PesananWarkop("Nanda", "Arabica Gayo", "Bubuk", "x 1", "30.000"));
+        //pesananWarkopArrayList.add(new PesananWarkop("Nanda", "Arabica Gayo", "Bubuk", "x 1", "30.000"));
     }
 }

@@ -3,6 +3,6 @@
 
     <item android:color="@android:color/white"
         android:state_checked="true"/>
-    <item android:color="@color/colorPrimaryDark"/>
+    <item android:color="#bdc3c7"/>
 
 </selector>

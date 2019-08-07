@@ -22,7 +22,7 @@ public class ListWarkopActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ListWarkopAdapter adapter;
-    private List<Warkop> warkopArrayList;
+    private List<Warkop> warkopList;
 
     Endpoints endpoints;
     Warkop warkop;
@@ -36,6 +36,7 @@ public class ListWarkopActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerview);
         //adapter = new ListWarkopAdapter(warkopArrayList);
+        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListWarkopActivity.this, RecyclerView.HORIZONTAL, false);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListWarkopActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         //recyclerView.setAdapter(adapter);
@@ -46,8 +47,8 @@ public class ListWarkopActivity extends AppCompatActivity {
         endpoints.getWarkops().enqueue(new Callback<List<Warkop>>() {
             @Override
             public void onResponse(Call<List<Warkop>> call, Response<List<Warkop>> response) {
-                warkopArrayList = new ArrayList<>(response.body());
-                adapter = new ListWarkopAdapter(ListWarkopActivity.this,warkopArrayList);
+                warkopList = new ArrayList<>(response.body());
+                adapter = new ListWarkopAdapter(ListWarkopActivity.this,warkopList);
                 recyclerView.setAdapter(adapter);
             }
 

@@ -4,16 +4,16 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.coffeetime.client.MainClientActivity;
 import com.coffeetime.model.User;
 import com.coffeetime.networkmanager.Connection;
 import com.coffeetime.networkmanager.Endpoints;
-import com.coffeetime.warkop.MainWarkopActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +36,8 @@ public class RegisterActivity extends Activity {
     Endpoints endpoints;
     User user;
 
+    String nama, email, phone, password ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +56,12 @@ public class RegisterActivity extends Activity {
     }
 
     public void daftarclient(View view) {
+        validasi();
         isidata("1");
     }
 
     public void daftarwarkop(View view) {
+        validasi();
         isidata("0");
     }
 
@@ -95,5 +99,32 @@ public class RegisterActivity extends Activity {
 
             }
         });
+    }
+
+    public void validasi (){
+        nama = namaText.getText().toString();
+        email = emailText.getText().toString();
+        phone = phoneText.getText().toString();
+        password = passwordText.getText().toString();
+
+        if (TextUtils.isEmpty(nama)){
+            Toast.makeText(this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty (email)){
+            Toast.makeText(this, "Email tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(phone)){
+            Toast.makeText(this, "Nomor tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 }

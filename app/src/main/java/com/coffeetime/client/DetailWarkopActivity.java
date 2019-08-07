@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class DetailWarkopActivity extends Activity {
     SharedPreferences.Editor editor;
     Gson gson;
     //Warkop warkop;
+    List<Integer> totalitem = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class DetailWarkopActivity extends Activity {
 
         warkop = (Warkop) getIntent().getSerializableExtra("warkop");
 
+
         tampildata();
     }
 
@@ -100,12 +103,16 @@ public class DetailWarkopActivity extends Activity {
                     recyclerView.setAdapter(adapter);
 
                     adapter.setOnQuantityChangedListener(new MenuClientAdapter.OnQuantityChangedListener() {
-                        int totalakhir = 0;
+                        /*int totalakhir = 0;
+                        List<Integer> totalitem = new ArrayList<>();*/
 
                         @Override
-                        public void onQuantityChanged(int total) {
-                            totalakhir += total;
-                            harga_total.setText(String.valueOf(totalakhir));
+                        public void onQuantityChanged(int harga) {
+                            /*int total1=total;
+                            totalakhir += total1;*/
+
+                            totalitem.add(harga);
+                            Log.i("totalitem",""+totalitem);
                         }
                     });
                 }
@@ -120,5 +127,18 @@ public class DetailWarkopActivity extends Activity {
 
     public void Pesan(View view) {
         startActivity(new Intent(DetailWarkopActivity.this, PesanActivity.class));
+    }
+
+    public void Hitung(View view) {
+        int totalakhir = 0;
+
+        for (int i = 0; i < totalitem.size(); i++) {
+            totalakhir += totalitem.get(i);
+
+        }
+
+        //Log.i("totalakhir", ""+totalakhir);
+
+        harga_total.setText(String.valueOf(totalakhir));
     }
 }

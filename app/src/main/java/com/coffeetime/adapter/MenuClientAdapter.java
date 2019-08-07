@@ -45,13 +45,13 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
     }
 
     public interface OnQuantityChangedListener {
-        void onQuantityChanged(int total);
+        void onQuantityChanged(int harga);
     }
 
     public class MenuClientViewHolder extends RecyclerView.ViewHolder {
         private TextView nama_kopi, jenis_kopi, harga_kopi, txquantity;
         private ImageView decrement, increment;
-        //private int quantity = 0;
+        private int quantity = 0;
 
         public MenuClientViewHolder(View itemView) {
             super(itemView);
@@ -68,11 +68,12 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
                 public void onClick(View v) {
                     int harga = Integer.parseInt(harga_kopi.getText().toString());
                     int quantity = Integer.parseInt(txquantity.getText().toString());
-                    int total = harga * quantity;
+                    //int total = harga * quantity;
                     //harga_total.setText(total+"");
 
-                    listener.onQuantityChanged(total);
+                    //int total = harga * quantity;
 
+                    listener.onQuantityChanged(harga);
                     quantity = quantity + 1;
                     txquantity.setText(String.valueOf(quantity));
                 }
@@ -83,10 +84,11 @@ public class MenuClientAdapter extends RecyclerView.Adapter<MenuClientAdapter.Me
                 public void onClick(View v) {
                     int harga = Integer.parseInt(harga_kopi.getText().toString());
                     int quantity = Integer.parseInt(txquantity.getText().toString());
-                    int total = harga * quantity;
+                    //int total = harga * quantity;
+
                     //harga_total.setText(total+"");
 
-                    listener.onQuantityChanged(total);
+                    listener.onQuantityChanged(-harga);
 
                     quantity = quantity - 1;
                     if (quantity < 0) {

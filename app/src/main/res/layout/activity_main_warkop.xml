@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".client.MainClientActivity">
 
+    <ImageView
+        android:id="@+id/imgAnim"
+        android:src="@drawable/ic_refresh_gelap"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+
     <FrameLayout
         android:id="@+id/fl_container_warkop"
         android:layout_width="match_parent"

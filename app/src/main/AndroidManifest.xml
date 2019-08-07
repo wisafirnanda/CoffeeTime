@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <permission
+   <permission
         android:name="com.example.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
@@ -26,6 +26,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".client.Pemesanan"></activity>
+        <activity android:name=".client.DetailBijiKopi" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -51,7 +53,9 @@
         <activity android:name=".client.MainClientActivity" />
         <activity android:name=".client.DetailWarkopActivity" />
         <activity android:name=".warkop.TambahWarkopActivity" />
-
+        <activity android:name=".client.ListKopiJadiActivity"/>
+        <activity android:name=".client.ListKopiBubukActivity"/>
+        <activity android:name=".client.ListKopiBijiActivity"/>
     </application>
 
 </manifest>

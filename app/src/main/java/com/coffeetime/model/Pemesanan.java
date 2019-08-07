@@ -17,12 +17,19 @@ public class Pemesanan {
     @SerializedName("total_harga")
     @Expose
     private String totalHarga;
+    @SerializedName("alamat")
+    @Expose
+    private String alamat;
     @SerializedName("alamat_antar_longitude")
     @Expose
     private String alamatAntarLongitude;
     @SerializedName("alamat_antar_latitude")
     @Expose
     private String alamatAntarLatitude;
+    @SerializedName("waktu")
+    @Expose
+    private String waktu;
+
 
     public String getIdPemesanan() {
         return idPemesanan;
@@ -56,6 +63,14 @@ public class Pemesanan {
         this.totalHarga = totalHarga;
     }
 
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
     public String getAlamatAntarLongitude() {
         return alamatAntarLongitude;
     }
@@ -70,6 +85,14 @@ public class Pemesanan {
 
     public void setAlamatAntarLatitude(String alamatAntarLatitude) {
         this.alamatAntarLatitude = alamatAntarLatitude;
+    }
+
+    public String getWaktu() {
+        return waktu;
+    }
+
+    public void setWaktu(String waktu) {
+        this.waktu = waktu;
     }
 
 }

@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.coffeetime.client.MainClientActivity;
 import com.coffeetime.model.User;
@@ -30,6 +32,8 @@ public class LoginActivity extends Activity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
+    String email, password ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,7 @@ public class LoginActivity extends Activity {
     }
 
     public void login(View view) {
+        validasi();
 
         user = new User();
         user.setEmail(emailText.getText().toString());
@@ -91,6 +96,21 @@ public class LoginActivity extends Activity {
 
 
         //startActivity(new Intent(LoginActivity.this, MainClientActivity.class));
+    }
+
+    public void validasi (){
+        email = emailText.getText().toString();
+        password = passwordText.getText().toString();
+
+        if (TextUtils.isEmpty (email)){
+            Toast.makeText(this, "Email tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 
     public void register(View view) {

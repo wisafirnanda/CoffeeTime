@@ -68,15 +68,15 @@ public class MainClientActivity extends AppCompatActivity
     }
 
     public void biji(View view) {
-        startActivity(new Intent(MainClientActivity.this, ListWarkopActivity.class));
+        startActivity(new Intent(MainClientActivity.this, ListKopiBijiActivity.class));
     }
 
     public void bubuk(View view) {
-        startActivity(new Intent(MainClientActivity.this, ListWarkopActivity.class));
+        startActivity(new Intent(MainClientActivity.this, ListKopiBubukActivity.class));
     }
 
     public void kopijadi(View view) {
-        startActivity(new Intent(MainClientActivity.this, ListWarkopActivity.class));
+        startActivity(new Intent(MainClientActivity.this, ListKopiJadiActivity.class));
     }
 
     public void terfavorit(View view) {

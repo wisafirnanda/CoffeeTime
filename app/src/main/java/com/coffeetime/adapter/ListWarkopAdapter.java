@@ -46,16 +46,14 @@ public class ListWarkopAdapter extends RecyclerView.Adapter<ListWarkopAdapter.Li
     public class ListWarkopViewHolder extends RecyclerView.ViewHolder {
         private TextView nama_warkop, alamat_warkop;
         RelativeLayout detailWarkopLayout;
-        View mView;
 
 
         public ListWarkopViewHolder(View itemView) {
             super(itemView);
-            mView = itemView;
 
-            nama_warkop = mView.findViewById(R.id.txnama_warkop);
-            alamat_warkop = mView.findViewById(R.id.txalamat_warkop);
-            detailWarkopLayout = mView.findViewById(R.id.warkopDetailLayout);
+            nama_warkop = itemView.findViewById(R.id.txnama_warkop);
+            alamat_warkop = itemView.findViewById(R.id.txalamat_warkop);
+            detailWarkopLayout = itemView.findViewById(R.id.warkopDetailLayout);
 
             detailWarkopLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

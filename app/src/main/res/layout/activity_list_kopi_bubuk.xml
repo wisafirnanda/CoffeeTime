@@ -7,8 +7,16 @@
     android:layout_height="wrap_content"
     android:padding="5dp">
 
+    <SearchView
+        android:id="@+id/searchkopibubuk"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false">
+        <requestFocus />
+    </SearchView>
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerviewriwayat"
+        android:id="@+id/recyclerviewkopibubuk"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"

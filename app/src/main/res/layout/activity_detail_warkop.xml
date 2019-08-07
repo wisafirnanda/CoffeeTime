@@ -119,12 +119,21 @@
             android:padding="8dp">
 
             <Button
-                android:id="@+id/btnPesan"
-                android:layout_width="match_parent"
+                android:id="@+id/btnHitung"
+                android:layout_width="200dp"
                 android:layout_height="38dp"
-                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="Hitung"
+                android:text="Hitung Sekarang"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnPesan"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
                 android:background="@color/colorPrimaryDark"
                 android:onClick="Pesan"
+                android:layout_marginStart="10dp"
                 android:text="Pesan Sekarang"
                 android:textColor="@color/white" />
 
@@ -160,7 +169,7 @@
                     android:layout_marginEnd="12dp"
                     android:textColor="#FF6631"
                     android:textSize="18sp"
-                    android:text="10000"
+                    android:text="0"
                     android:textStyle="bold" />
 
             </RelativeLayout>
